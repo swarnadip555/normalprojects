@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Swarnadip's Maze Solver</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-dark">
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">M</div>
+        <div>
+          <h1>Swarnadip's Maze Solver</h1>
+          <p class="sub">Maze generation + Solvers: BFS / DFS / Backtracking</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <label>
+          Rows
+          <input id="rowsInput" type="number" min="10" max="60" value="25">
+        </label>
+        <label>
+          Cols
+          <input id="colsInput" type="number" min="10" max="60" value="25">
+        </label>
+
+        <select id="algoSelect" title="Choose solver">
+          <option value="bfs">BFS (Shortest path)</option>
+          <option value="dfs_iter">DFS (Iterative)</option>
+          <option value="backtrack">Backtracking (Recursive)</option>
+        </select>
+
+        <label>
+          Speed
+          <input id="speedRange" type="range" min="1" max="100" value="35">
+        </label>
+
+        <button id="genBtn" class="btn">Generate Maze</button>
+        <button id="solveBtn" class="btn accent">Solve</button>
+        <button id="clearBtn" class="btn alt">Clear</button>
+      </div>
+    </header>
+
+    <main class="content">
+      <aside class="panel">
+        <h3>Legend</h3>
+        <div class="legend-row"><span class="cell legend start"></span> Start</div>
+        <div class="legend-row"><span class="cell legend end"></span> End</div>
+        <div class="legend-row"><span class="cell legend path"></span> Final Path</div>
+        <div class="legend-row"><span class="cell legend visit"></span> Visited</div>
+        <div class="legend-row"><span class="cell legend wall"></span> Wall</div>
+        <div class="legend-row"><span class="cell legend empty"></span> Empty</div>
+
+        <hr>
+        <h4>Notes</h4>
+        <p>Generate a maze, pick an algorithm, then click Solve. BFS finds the shortest path; DFS & Backtracking explore differently.</p>
+      </aside>
+
+      <section class="board-wrap">
+        <div id="board" class="board"></div>
+      </section>
+    </main>
+
+    <footer class="foot">Made by Swarnadip  ·Modern UI </footer>
+  </div>
+
+  <script src="solver.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
